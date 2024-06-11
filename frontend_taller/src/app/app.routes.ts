@@ -1,6 +1,9 @@
+// src/app/app.routes.ts
 import { Routes } from '@angular/router';
 import { NewClienteComponent } from './new-cliente/new-cliente.component';
-import { EditClienteComponent } from './edit-cliente/edit-cliente.component';
-export const routes: Routes = [{ path: 'new-cliente', component: NewClienteComponent},
-{ path: 'edit-cliente', component: EditClienteComponent}
+import { CommonModule } from "@angular/common";
+
+export const appRoutes: Routes = [
+  { path: 'new-cliente', component: NewClienteComponent },
+  { path: '', redirectTo: '/new-cliente', pathMatch: 'full' }
 ];

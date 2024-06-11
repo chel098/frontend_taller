@@ -1,12 +1,26 @@
-import { Component } from '@angular/core';
+// src/app/new-cliente/new-cliente.component.ts
+import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
-  selector: 'app-new-cliente',
+  imports: [CommonModule],
   standalone: true,
-  imports: [],
+  selector: 'app-new-cliente',
   templateUrl: './new-cliente.component.html',
-  styleUrl: './new-cliente.component.css'
+  styleUrls: ['./new-cliente.component.css']
 })
-export class NewClienteComponent {
+export class NewClienteComponent implements OnInit {
+  clients: any[] = [];
 
+  constructor(private apiService: ApiService) { }
+
+
+  ngOnInit(): void {
+    this.apiService.getClientList().subscribe((data: any[]) => {
+      this.clients = data;
+    });
+  }
 }
+

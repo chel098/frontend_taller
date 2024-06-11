@@ -1,8 +1,8 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router';
+// src/app/app.routes.ts
+import { Routes } from '@angular/router';
+import { NewClienteComponent } from './new-cliente/new-cliente.component';
 
-import { routes } from './app.routes';
-
-export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes)]
-};
+export const appRoutes: Routes = [
+  { path: 'new-client', component: NewClienteComponent },
+  { path: '', redirectTo: '/new-client', pathMatch: 'full' }
+];

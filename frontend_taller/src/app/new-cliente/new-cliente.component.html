@@ -12,19 +12,13 @@
             <th>Acciones</th>
         </tr>
     </thead>
-    <tbody>
-        <tr>
-            <td>John Doe</td>
-            <td>.com</td>
-            <td>johndoe123</td>
-            <td>70 kg</td>
-            <td>180 cm</td>
-            <td>
-                <button class="btn-editar">Editar</button>
-                <button class="btn-eliminar">Eliminar</button>
-            </td>
-        </tr>
-        <!-- Aquí puedes agregar más filas con usuarios -->
-    </tbody>
+    
 </table>
+
+ <h2>Client List</h2>
+    <ul>
+      <li *ngFor="let client of clients">{{ client.nombre }}</li>
+    </ul>
+
+ 
 
