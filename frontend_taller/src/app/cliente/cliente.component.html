@@ -1,0 +1,32 @@
+<h2 class="my-4">Lista de Usuarios</h2>
+<div class="table-responsive">
+  <table class="table table-bordered table-hover">
+    <thead class="thead-light">
+      <tr>
+        <th>Nombre</th>
+        <th>Correo</th>
+        <th>Usuario</th>
+        <th>Peso</th>
+        <th>Altura</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of clients">
+        <td>{{item.nombre}}</td>
+        <td>{{item.correo}}</td>
+        <td>{{item.usuario}}</td>
+        <td>{{item.peso}}</td>
+        <td>{{item.altura}}</td>
+        <!-- <td>
+          <button class="btn btn-primary btn-sm mr-2" routerLink="../updateCliente/{{item.cc}}">
+            Editar
+          </button>
+          <button class="btn btn-danger btn-sm" (click)="delete(item.cc);">
+            Eliminar
+          </button>
+        </td> -->
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,24 +1,12 @@
-
-<h2>Lista de Usuarios</h2>
-
-<table>
-    <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Correo</th>
-            <th>Usuario</th>
-            <th>Peso</th>
-            <th>Altura</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    
-</table>
-
- <h2>Client List</h2>
-    <ul>
-      <li *ngFor="let client of clients">{{ client.nombre }}</li>
-    </ul>
-
- 
-
+<form [formGroup]="clienteForm" (ngSubmit)="onSubmit()">
+    <label for="nombre">Nombre:</label>
+    <input type="text" formControlName="nombre" id="nombre">
+  
+    <label for="correo">Correo:</label>
+    <input type="email" formControlName="correo" id="correo">
+  
+    <!-- Agrega más campos según sea necesario -->
+  
+    <button type="submit">Agregar Cliente</button>
+  </form>
+  
